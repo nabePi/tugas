@@ -25,9 +25,10 @@
                         </tr>
                       </thead>
                       <tbody>
+                        {{-- */$n=1;/* --}}
                         @foreach ($users as $user)
                           <tr>
-                            <td>1</td>
+                            <td>{{ $n }}</td>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->phone }}</td>
                             <td>{{ $user->occupation }}</td>
@@ -45,6 +46,7 @@
                               {{ Form::close() }}
                             </td>
                           </tr>
+                          {{-- */$n++;/* --}}
                         @endforeach
                       </tbody>
                     </table>

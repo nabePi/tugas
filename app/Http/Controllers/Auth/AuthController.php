@@ -56,6 +56,7 @@ class AuthController extends Controller
             'phone' => 'required|max:20',
             'occupation' => 'required|max:100',
             'password' => 'required|min:6|confirmed',
+            'password_confirmation' => 'required|min:6|',
         ]);
     }
 
