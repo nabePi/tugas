@@ -9,7 +9,7 @@
 
                 <div class="panel-body">
                   @if(Session::has('message'))
-                    <div class="alert alert-info">{{ Session::get('message') }}</div>
+                    <div class="alert {{ Session::get('alert') }}">{{ Session::get('message') }}</div>
                   @endif
 
                     <table class="table table-hover">

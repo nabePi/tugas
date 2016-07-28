@@ -79,7 +79,14 @@ class DataController extends Controller
         $user->is_admin = $is_admin;
         $user->save();
 
-        session()->flash('message', 'Successfully updated data');
+        if($user){
+          session()->flash('message', 'Update data success !');
+          session()->flash('alert', 'alert-info');
+        } else {
+          session()->flash('message', 'Update data unsuccess !');
+          session()->flash('alert', 'alert-danger');
+        }
+
         return redirect('data');
 
     }
@@ -94,7 +101,15 @@ class DataController extends Controller
     {
         $user = User::find($id);
         $user->delete();
-        session()->flash('message', 'Successfully deleted data');
+
+        if($user){
+          session()->flash('message', 'Delete data success !');
+          session()->flash('alert', 'alert-info');
+        } else {
+          session()->flash('message', 'Delete data unsuccess !');
+          session()->flash('alert', 'alert-danger');
+        }
+
         return redirect('data');
     }
 }
